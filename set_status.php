@@ -248,6 +248,7 @@ function replace_callback($pattern, $text, $key, $to) {
       else {
         $str = FALSE;
       }
+
       //$str = "{$diff['days']} Дней {$diff['hours']} Часов и {$diff['minutes']} минут";
       break;
     case 'days':
@@ -614,7 +615,7 @@ $i++;
 $patterns[$i]['status'] = 'До Нового Года осталось 00 Дней 00 Часов и 00 минут';
 $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
 $patterns[$i]['callback'] = 'replace_callback';
-$patterns[$i]['args'] = array('gaga', gmdate('c', strtotime('1 January next year 00:00:00 UTC')));
+$patterns[$i]['args'] = array('gaga', (new Datetime('31 December this year 23:59:59', new DateTimeZone('Europe/Moscow')))->format('Y-m-d H:i:s'));
 
 
 
