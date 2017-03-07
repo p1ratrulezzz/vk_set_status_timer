@@ -612,10 +612,17 @@ foolish people do';
 $patterns[$i]['args'] = array('dummy', '2012-09-09 00:00:00');
 
 $i++;
-$patterns[$i]['status'] = 'До Нового Года осталось 00 Дней 00 Часов и 00 минут';
+/*$patterns[$i]['status'] = 'До Нового Года осталось 00 Дней 00 Часов и 00 минут';
 $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
 $patterns[$i]['callback'] = 'replace_callback';
 $patterns[$i]['args'] = array('gaga', (new Datetime('31 December this year 23:59:59', new DateTimeZone('Europe/Moscow')))->format('Y-m-d H:i:s'));
+*/
+
+// Западный мир
+$patterns[$i]['status'] = 'До второго сезона "Мира дикого запада" 00 Дней 00 Часов и 00 минут';
+$patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
+$patterns[$i]['callback'] = 'replace_callback';
+$patterns[$i]['args'] = array('gaga', (new Datetime('1 October of this year', new DateTimeZone('Europe/Moscow')))->format('Y-m-d H:i:s'));
 
 
 
