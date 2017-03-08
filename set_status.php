@@ -32,7 +32,7 @@ date_default_timezone_set('UTC');
 // Convert shared settings string timezone to DateTimeZone
 $tzLocal = &get_shared('tzLocal');
 $tzLocal = new DateTimeZone($tzLocal);
-$tzLocal = null;
+unset($tzLocal);
 
 // Set default value for auth_store if not set
 if (!get_shared('auth_store')) {
@@ -223,8 +223,7 @@ function diff_raw($to) {
 
 function diff($to) {
   $to_date = new DateTime($to, get_shared('tzLocal'));
-  $now = new DateTime();
-  $now->setTimeZone($to_date->getTimeZone());
+  $now = new DateTime('now', new DateTimeZone('UTC'));
   
   $diff = $now->diff($to_date);
   if ($diff->invert == 1) {
