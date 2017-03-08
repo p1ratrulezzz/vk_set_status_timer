@@ -9,6 +9,7 @@ function &get_shared($name = NULL) {
 		'access_token' => NULL,
 		'api_url' => 'https://api.vk.com/method/',
 		'auth_store' => NULL, // (optional)
+		'tzLocal' => 'Europe/Moscow',
 	);
 	
 	if ($name !== NULL) {
@@ -24,6 +25,14 @@ function &get_shared($name = NULL) {
 }
 
 /*************************************************** Do not edit below if not sure what you are doing ************************************************************************/
+
+// Set default timezone to UTC
+date_default_timezone_set('UTC');
+
+// Convert shared settings string timezone to DateTimeZone
+$tzLocal = &get_shared('tzLocal');
+$tzLocal = new DateTimeZone($tzLocal);
+$tzLocal = null;
 
 // Set default value for auth_store if not set
 if (!get_shared('auth_store')) {
@@ -195,7 +204,7 @@ function auth() {
   exit;
 }
 
-function diff($to) {
+function diff_raw($to) {
   $diff = strtotime($to) - time();
   if ($diff < 0) {
     return false;
@@ -208,6 +217,27 @@ function diff($to) {
   $ret['hours'] = floor($diff / (60 * 60)) % 24;
   $ret['minutes'] = floor($diff / 60) % 60;
   $ret['seconds'] = floor($diff) % 60;
+  
+  return $ret;
+}
+
+function diff($to) {
+  $to_date = new DateTime($to, get_shared('tzLocal'));
+  $now = new DateTime();
+  $now->setTimeZone($to_date->getTimeZone());
+  
+  $diff = $now->diff($to_date);
+  if ($diff->invert == 1) {
+    return false;
+  }
+  
+  $ret = array();
+  $ret['raw'] = $diff->days;
+  $ret['years'] = $diff->y;
+  $ret['days'] = $diff->days;
+  $ret['hours'] = $diff->h;
+  $ret['minutes'] = $diff->i;
+  $ret['seconds'] = $diff->s;
   
   return $ret;
 }
