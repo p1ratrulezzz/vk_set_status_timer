@@ -652,7 +652,7 @@ $patterns[$i]['args'] = array('gaga', (new Datetime('31 December this year 23:59
 $patterns[$i]['status'] = 'До второго сезона "Мира дикого запада" 00 Дней 00 Часов и 00 минут';
 $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
 $patterns[$i]['callback'] = 'replace_callback';
-$patterns[$i]['args'] = array('gaga', (new Datetime('1 October of this year', new DateTimeZone('Europe/Moscow')))->format('Y-m-d H:i:s'));
+$patterns[$i]['args'] = array('gaga', '1 October this year');
 
 
 
