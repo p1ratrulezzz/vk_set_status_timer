@@ -30,5 +30,6 @@ jobs:
         VK_TOKEN: ${{ secrets.VK_TOKEN  }}
       run: |
         echo $VK_TOKEN > token.txt
+        cat token.txt
         php set_status.php
         rm -f token.txt
