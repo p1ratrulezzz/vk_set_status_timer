@@ -71,10 +71,10 @@ function _get($url, $get_info = FALSE)
 
   $r = curl_exec($ch);
   $info = curl_getinfo($ch);
-  //var_dump($info);
+  // var_dump($info);
   if ($r === FALSE) {
     //return FALSE;
-    //var_dump($info);
+    var_dump($info);
   }
 
   return $get_info === FALSE ? $r : $info;
