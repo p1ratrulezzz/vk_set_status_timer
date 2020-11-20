@@ -160,6 +160,7 @@ function auth() {
 	  
 	  $url = $shared['api_url'] . "account.getProfileInfo?v=5.60&access_token={$access_token}";
 	  $r = json_decode(_get($url));
+	  var_dump($r);
 	  
 	  if (!isset($r->response->first_name)) {
 		  die('Access token is invalid... Reauthorize app.' . PHP_EOL);
@@ -629,10 +630,10 @@ $patterns[$i]['pattern'] = '/^(\+)([0-9]+)/i';
 $patterns[$i]['args'] = array('dummy', '2012-11-11 00:00:00');*/
 
 
-$patterns[$i]['status'] = 'Won\'t you die tonight for love';
-$patterns[$i]['args'] = array('dummy', '2012-09-09 00:00:00');
+//$patterns[$i]['status'] = 'Won\'t you die tonight for love';
+//$patterns[$i]['args'] = array('dummy', '2012-09-09 00:00:00');
 
-$i++;
+// $i++;
 $patterns[$i]['status'] = 'До Нового Года осталось 00 Дней 00 Часов и 00 минут';
 $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
 $patterns[$i]['callback'] = 'replace_callback';
@@ -643,9 +644,6 @@ $patterns[$i]['args'] = array('gaga', (new Datetime('31 December this year 23:59
 // $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
 // $patterns[$i]['callback'] = 'replace_callback';
 // $patterns[$i]['args'] = array('gaga', '1 October this year');
-
-
-
 
 //var_dump($patterns);
 // set_time_limit(-1);
