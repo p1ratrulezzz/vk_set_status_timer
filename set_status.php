@@ -159,8 +159,8 @@ function auth() {
 	  $access_token = $_buffer[0];
 	  
 	  $url = $shared['api_url'] . "account.getProfileInfo?v=5.60&access_token={$access_token}";
-	  $r = json_decode(_get($url));
-	  var_dump($r);
+	  $r = _get($url); var_dump($r);
+	  $r = json_decode($r);
 	  
 	  if (!isset($r->response->first_name)) {
 		  die('Access token is invalid... Reauthorize app.' . PHP_EOL);
