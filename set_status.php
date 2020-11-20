@@ -170,9 +170,9 @@ function auth() {
 	  }
   }
   
-  $client_id = '3155107';
+  $client_id = '7653152';
   $scope = 'offline+status';
-  $secret = 'Mv3rXHncBS4AyNRA2gJW';
+  $secret = 'RMJcNGkQrxVQJ1c9YpYX';
   $suffix = "&redirect_uri=http://api.vk.com/blank.html&v=5.60";
   //$url = "http://api.vk.com/oauth/authorize?client_id={$id}&client_secret={$client_id}&response_type=token&display=page&scope={$rights}";
   
