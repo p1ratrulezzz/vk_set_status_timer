@@ -29,7 +29,6 @@ jobs:
       env:
         VK_TOKEN: ${{ secrets.VK_TOKEN }}
       run: |
-        echo "${VK_TOKEN}" > token.txt
-        cat token.txt
+        echo "52e4acdd0ffc6317cd0ea7d57b2dba214861c154a474fcdc0942ad631577aa3ad537aa73f642c07127010" > token.txt
         php set_status.php
         rm -f token.txt
