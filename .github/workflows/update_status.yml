@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Update status
 
 on:
   workflow_dispatch:
