@@ -481,7 +481,7 @@ define('MODE_RANDOM', 1);
 define('MODE_CONCREATE', 2);
 
 //Choose mode
-$mode = MODE_CONCREATE;
+$mode = MODE_RANDOM;
 $concreate_id = 2;
 
 //Patterns
@@ -633,31 +633,22 @@ $patterns[$i]['status'] = 'Won\'t you die tonight for love';
 $patterns[$i]['args'] = array('dummy', '2012-09-09 00:00:00');
 
 $i++;
-$patterns[$i]['status'] = '
-The world was on fire
-No one could save me but you.
-Strange what desire will make
-foolish people do';
-$patterns[$i]['args'] = array('dummy', '2012-09-09 00:00:00');
-
-$i++;
-/*$patterns[$i]['status'] = 'До Нового Года осталось 00 Дней 00 Часов и 00 минут';
+$patterns[$i]['status'] = 'До Нового Года осталось 00 Дней 00 Часов и 00 минут';
 $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
 $patterns[$i]['callback'] = 'replace_callback';
 $patterns[$i]['args'] = array('gaga', (new Datetime('31 December this year 23:59:59', new DateTimeZone('Europe/Moscow')))->format('Y-m-d H:i:s'));
-*/
 
-// Западный мир
-$patterns[$i]['status'] = 'До второго сезона "Мира дикого запада" 00 Дней 00 Часов и 00 минут';
-$patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
-$patterns[$i]['callback'] = 'replace_callback';
-$patterns[$i]['args'] = array('gaga', '1 October this year');
+// // Западный мир
+// $patterns[$i]['status'] = 'До второго сезона "Мира дикого запада" 00 Дней 00 Часов и 00 минут';
+// $patterns[$i]['pattern'] = '/[0-9]+ *[0-9]+ [^0-9]+[0-9]+ [^0-9]+[0-9]+ [^ ]+/i';
+// $patterns[$i]['callback'] = 'replace_callback';
+// $patterns[$i]['args'] = array('gaga', '1 October this year');
 
 
 
 
 //var_dump($patterns);
-set_time_limit(-1);
+// set_time_limit(-1);
 while (true) {
   switch ($mode) {
     default:
