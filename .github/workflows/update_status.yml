@@ -18,6 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: benedict_cumberbatch
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
