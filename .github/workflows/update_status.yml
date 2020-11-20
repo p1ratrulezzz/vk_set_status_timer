@@ -1,17 +1,9 @@
 name: Update status
 
 on:
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/17 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
