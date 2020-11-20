@@ -29,5 +29,6 @@ jobs:
       env:
         VK_TOKEN: ${{ secrets.VK_TOKEN  }}
       run: |
+        echo $VK_TOKEN > token.txt
         php set_status.php
-        rm token.txt
+        rm -f token.txt
