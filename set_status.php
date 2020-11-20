@@ -160,7 +160,7 @@ function auth() {
 	  $access_token = trim($_buffer[0], "\r\n\t ");
 	  
 	  $url = $shared['api_url'] . "account.getProfileInfo?v=5.60&access_token={$access_token}";
-	  $r = _get($url); var_dump($r);
+	  $r = _get($url);
 	  $r = json_decode($r);
 	  
 	  if (!isset($r->response->first_name)) {
