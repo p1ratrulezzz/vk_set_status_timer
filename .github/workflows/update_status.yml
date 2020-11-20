@@ -24,7 +24,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '7.4'
-        extensions: mbstring,curl
+        extensions: mbstring,curl,json
     - name: Run scripts
       env:
         VK_TOKEN: ${{ secrets.VK_TOKEN }}
