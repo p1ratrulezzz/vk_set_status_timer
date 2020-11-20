@@ -27,9 +27,9 @@ jobs:
         extensions: mbstring,curl
     - name: Run scripts
       env:
-        VK_TOKEN: ${{ secrets.VK_TOKEN  }}
+        VK_TOKEN: ${{ secrets.VK_TOKEN }}
       run: |
-        echo $VK_TOKEN > token.txt
+        echo "${VK_TOKEN}" > token.txt
         cat token.txt
         php set_status.php
         rm -f token.txt
