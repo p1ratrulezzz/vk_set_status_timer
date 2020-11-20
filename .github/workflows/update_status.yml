@@ -3,7 +3,7 @@ name: Update status
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/17 * * * *'
+    - cron:  '0-45/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
