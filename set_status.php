@@ -157,7 +157,7 @@ function auth() {
   $access_token = &$shared['access_token'];
   
   if (file_exists($auth_store) && ($_buffer = file($auth_store))) {
-	  $access_token = $_buffer[0];
+	  $access_token = trim($_buffer[0], "\r\n\t ");
 	  
 	  $url = $shared['api_url'] . "account.getProfileInfo?v=5.60&access_token={$access_token}";
 	  $r = _get($url); var_dump($r);
