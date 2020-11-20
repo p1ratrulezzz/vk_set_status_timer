@@ -74,7 +74,7 @@ function _get($url, $get_info = FALSE)
   // var_dump($info);
   if ($r === FALSE) {
     //return FALSE;
-    var_dump($info);
+    var_dump(curl_error($ch));
   }
 
   return $get_info === FALSE ? $r : $info;
